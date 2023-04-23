@@ -1,0 +1,75 @@
+nnoremap <SPACE> <Nop>
+let mapleader=" "
+
+"""Plugins
+Plug 'preservim/nerdtree'
+
+"""Basic configuration
+set number relativenumber
+set icsearch
+set ignorecase
+set clipboard+=unnamed
+set showmode
+set ideajoin
+set clipboard+=ideaput
+set scrolloff=5
+
+"""Window navigation
+sethandler <C-j> a:vim
+sethandler <C-k> a:vim
+nnoremap <C-h> <C-w>h
+nnoremap <C-j> <C-w>j
+nnoremap <C-k> <C-w>k
+nnoremap <C-l> <C-w>l
+
+"""Open and reload ideavimrc
+nnoremap \e :e ~/.ideavimrc<CR>
+nnoremap \r :action IdeaVim.ReloadVimRc.reload<CR>
+
+nnoremap <C-S>v :action SplitVertically<CR>
+nnoremap <C-S>h :action SplitHorizontally<CR>
+nnoremap <C-=> :action Unsplit<CR>
+nnoremap <C-m> :action MoveEditorToOppositeTabGroup<CR>
+nnoremap <TAB> :action NextTab<CR>
+nnoremap <s-TAB> :action PreviousTab<CR>
+nnoremap <Leader>q :action CloseContent<CR>
+
+"""Open terminal
+nnoremap <s-t> :action ActivateTerminalToolWindow<CR>
+
+"""Refactoring action
+nnoremap <s-c> :action IntroduceConstant<CR>
+vnoremap <s-m> :action ExtractMethod<CR>
+nnoremap <s-s> :action ChangeSignature<CR>
+nnoremap <s-r> :action RenameElement<CR>
+"""Tool windows
+nnoremap <c-p> :action JumpToLastWindow<CR>
+nnoremap <c-x> :action HideAllWindows<CR>
+
+"""Source code navigation
+nnoremap gc :action GotoClass<CR>
+nnoremap gi :action GotoImplementation<CR>
+nnoremap gd :action GotToDeclaration<CR>
+nnoremap gs :action GotToSuperMethod<CR>
+nnoremap gb :action Back<CR>
+nnoremap gf :action Forward<CR>
+nnoremap <leader>: :action FindInPath<CR>
+nnoremap <leader>a :action GotoAction<CR>
+nnoremap <leader>f :action GotoFile<CR>
+nnoremap <leader>u :action FindUsages<CR>
+nnoremap <leader>o :action OptimizeImports<CR>
+
+"""Editing source code
+nnoremap <leader>c :action CommentByLineComment<CR>
+nnoremap <leader>r :action ReformatCode<CR>
+
+"""Run and debug
+nnoremap ,b :action ToggleLineBreakpoint<CR>
+nnoremap ,r :action Run<CR>
+nnoremap ,t :action ChooseRunConfiguration<CR>
+nnoremap ,d :action Debug<CR>
+nnoremap ,n :action ActivateDebugToolWindow<CR>
+
+"""Extension
+"""""""NerdTree
+map <leader>t :NERDTreeToggle<CR>
