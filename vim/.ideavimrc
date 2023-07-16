@@ -3,6 +3,7 @@ let mapleader=" "
 
 """Plugins
 Plug 'preservim/nerdtree'
+set easymotion
 
 """Basic configuration
 set number relativenumber
@@ -38,9 +39,9 @@ nnoremap <Leader>q :action CloseContent<CR>
 nnoremap <s-t> :action ActivateTerminalToolWindow<CR>
 
 """Refactoring action
-nnoremap <s-c> :action IntroduceConstant<CR>
+map <s-c> :action IntroduceConstant<CR>
 vnoremap <s-m> :action ExtractMethod<CR>
-nnoremap <s-s> :action ChangeSignature<CR>
+vnoremap <s-s> :action ChangeSignature<CR>
 nnoremap <s-r> :action RenameElement<CR>
 """Tool windows
 nnoremap <c-p> :action JumpToLastWindow<CR>
@@ -60,7 +61,7 @@ nnoremap <leader>u :action FindUsages<CR>
 nnoremap <leader>o :action OptimizeImports<CR>
 
 """Editing source code
-nnoremap <leader>c :action CommentByLineComment<CR>
+map <leader>c :action CommentByLineComment<CR>
 nnoremap <leader>r :action ReformatCode<CR>
 
 """Run and debug
